@@ -9,13 +9,11 @@ const TextContainer = ({ users }) => {
   return (
     <div className="textContainer">
       <div>
-        <h1>
-          Realtime Chat App
-        </h1>
+        <h1>Realtime Chat App</h1>
       </div>
       {users ? (
         <div>
-          <h1>Active users:</h1>
+          <h1>Active users</h1>
           <div className="activeContainer">
             <h2>
               {users.map(({ name }) => (

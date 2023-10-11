@@ -16,6 +16,11 @@
   .activeItem {
     display: flex;
     align-items: center;
+    background-color: #d8b906;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 10%;
+    font-size: medium;
   }
   
   .activeContainer img {
