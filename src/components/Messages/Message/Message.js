@@ -13,7 +13,6 @@ const Message = ({ message: { user, text }, name }) => {
     isSentByCurrentUser = true;
   }
 
-  console.log("TESTING", user, text, name);
 
   return (
     isSentByCurrentUser

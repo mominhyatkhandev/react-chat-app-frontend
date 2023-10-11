@@ -18,13 +18,13 @@ const Chat = () => {
   const [messages, setMessages] = useState([]);
   const [users, setUsers] = useState("");
 
-  const ENDPOINT = "localhost:5000";
+  const ENDPOINT = process.env.REACT_APP_ENDPOINT || "http://localhost:5000";
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
 
     socket = io(ENDPOINT);
-    console.log(socket);
+    // console.log(socket);
 
     socket.emit("join", { name, room }, () => {});
 
@@ -51,7 +51,6 @@ const Chat = () => {
     });
   }, []);
 
-  console.log(users, "users chats");
 
   const sendMessage = (event) => {
     event.preventDefault();
@@ -60,7 +59,6 @@ const Chat = () => {
       socket.emit("sendMessage", message, () => setMessage(""));
     }
   };
-  console.log("check", message, messages);
 
   return (
     <div className="outerContainer">
